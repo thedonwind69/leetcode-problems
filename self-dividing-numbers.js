@@ -36,4 +36,3 @@ var selfDividingNumbers = function(left, right) {
 
 var left = 1, right = 22;
 console.log(selfDividingNumbers(left, right));
-console.log("SEX");
