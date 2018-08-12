@@ -32,6 +32,5 @@ var selfDividingNumbers = function(left, right) {
     return array;
 };
 
-
 var left = 1, right = 22;
 console.log(selfDividingNumbers(left, right));
