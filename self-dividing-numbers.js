@@ -29,9 +29,7 @@ var selfDividingNumbers = function(left, right) {
         
         left++;
     }
-    
     return array;
-    
 };
 
 var left = 1, right = 22;
