@@ -4,9 +4,6 @@
 
 // Note: The length of temperatures will be in the range [1, 30000]. Each temperature will be an integer in the range [30, 100].
 
-
-
-
 // var noneIsLower = function (j, temps) {
 //     for (let i = j + 1; i< temps.length; i++) {
 //         var temp1 = temps[j];
@@ -65,4 +62,3 @@ var dailyTemperatures = function(temperatures) {
   result.push(0);
   return result;
 };
-
