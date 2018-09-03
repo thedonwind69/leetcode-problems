@@ -46,3 +46,8 @@ var redoString = (string) => {
 var backspaceCompare = function(S, T) {
     return redoString(S) === redoString(T);
 };
+
+S = "a##c", T = "#a#c"
+var S = "a#c", T = "b"
+
+console.log(backspaceCompare(S, T));
