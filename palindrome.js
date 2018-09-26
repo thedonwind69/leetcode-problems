@@ -1,3 +1,4 @@
+
 const is_palindrome = (string) => {
 
     var stringArray = string.split("");
