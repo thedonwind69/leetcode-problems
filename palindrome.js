@@ -15,7 +15,6 @@ const is_palindrome = (string) => {
         }
 
     }
-
     return true;
 };
 
