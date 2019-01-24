@@ -6,5 +6,4 @@ var sortedSquares = function(A) {
         return a-b;
     });
 };
-
 console.log(sortedSquares([5, 3, 2, 8, 1]));
