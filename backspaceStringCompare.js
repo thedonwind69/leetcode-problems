@@ -28,7 +28,6 @@
 // Follow up:
 
 // Can you solve it in O(N) time and O(1) space?
-
 var redoString = (string) => {
     var stringArray = string.split("");
     var array = [];
