@@ -1,25 +1,15 @@
 var singleNumber = function(nums) {
-    var count = {};
-    nums.forEach((num) => {
-        if (count[num]) {
-            count[num] += 1;
+    var count = [];
+    for (let i=0; i < nums.length; i++) {
+        var currentNum = nums[i];
+        if (!count.includes(currentNum)) {
+           count.push(currentNum); 
         } else {
-            count[num] = 1;
+            var index = count.indexOf(currentNum);
+            count.splice(index, 1);
         }
-    })
-    
-    console.log(Object.keys(count));
-
-    for (let i = 0; i< Object.keys(count).length; i++  ) {
-        let key = Object.keys(count)[i];
-        if (count[key] === 1) {
-            
-            return parseInt(key);
-        }
-   
     }
-        
     
+    return count.pop();
+     
 };
-
-console.log(singleNumber([2,2,1]));
