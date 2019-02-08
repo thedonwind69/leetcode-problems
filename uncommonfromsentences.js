@@ -29,3 +29,5 @@ var uncommonFromSentences = function(A, B) {
 var A = "s z z z s"
 var B = "s z ejt";
 console.log(uncommonFromSentences(A, B));
+
+//good
