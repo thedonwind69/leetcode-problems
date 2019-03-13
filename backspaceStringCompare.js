@@ -51,3 +51,4 @@ var S = "a##c", T = "#a#c";
 var S = "a#c", T = "b";
 
 console.log(backspaceCompare(S, T));
+
