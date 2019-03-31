@@ -1,6 +1,15 @@
-var saying = "HEYYYYY!!!!!!";
-function say () {
-    console.log("I said " + saying + "!!!");
+function rate () {
+
+    var time = 0;
+    function increase () {
+        time += 50;
+        console.log(time);
+    }
+
+    return increase;
+
 }
 
-say ();
+var boost = rate();
+boost();
+boost();
