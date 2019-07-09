@@ -1,4 +1,4 @@
-const smallestDistance = (stockPrices) => {
+const stockPrices = (stockPrices) => {
     var largestProfit = 0;
     var largestProfitPositions = null;
     for (let i = 0; i < stockPrices.length; i++) {
@@ -17,5 +17,5 @@ const smallestDistance = (stockPrices) => {
 }
 
 var test = [35, 69, 77, 66, 55, 66, 23, 15, 66, 100, 100, 44, 70];
-var result = smallestDistance(test);
+var result = stockPrices(test);
 console.log(result);
