@@ -9,14 +9,15 @@ function Synchronous () {
     console.log(3);
 }
 
-// Synchronous();
+Synchronous();
+console.log("sync");
 
 function Asynchronous () {
     console.log(1);
     setTimeout(function () {console.log(2)}, 1000);
     console.log(3);
 }
-
+console.log("async");
 Asynchronous();
 
 // the asynchronous example runs 1, 3, and then 2. That's because SETTIMEOUT is an asynchronous function that 
