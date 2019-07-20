@@ -27,19 +27,18 @@ sayHelloToSuthee();
 // the result of that function in a new created variable. It is beter than creating a new function for 
 // each "name" we want to pass into the function.
 
+function rate () {
 
-// function rate () {
+    var time = 0;
+    function increase () {
+        time += 50;
+        console.log(time);
+    }
 
-//     var time = 0;
-//     function increase () {
-//         time += 50;
-//         console.log(time);
-//     }
+    return increase;
 
-//     return increase;
+}
 
-// }
-
-// var boost = rate();
-// boost();
-// boost();
+var boost = rate();
+boost();
+boost();
