@@ -1,8 +1,6 @@
-def SutheekanSoSexy (string):
-    number = 1
-    while number < 100:
-        if number % 5 == 0:
-            print("Sutheekan is so " + string + "! X " + str(number))
-        number += 1
+name = format(5, '.2f')
+age = "25"
+print("Hi, I am {} and I am {} years old").format(name, age)
 
-SutheekanSoSexy("cute")
+
+
