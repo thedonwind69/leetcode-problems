@@ -1,5 +1,4 @@
 import random
-
 def heads_or_tails (call, coin, wager, money):
     if wager <= money:
         if coin == call:
@@ -15,6 +14,9 @@ testCoin = ["Heads", "Tails"]
 coinFlip = random.choice(testCoin)
 game1 = heads_or_tails("Heads", coinFlip, 101, 100)
 print(game1)
+
+# scratch paper -------
+
 
 
         
