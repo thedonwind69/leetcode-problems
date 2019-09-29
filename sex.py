@@ -15,8 +15,5 @@ coinFlip = random.choice(testCoin)
 game1 = heads_or_tails("Heads", coinFlip, 101, 100)
 print(game1)
 
-# scratch paper -------
-
-
 
         
