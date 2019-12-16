@@ -15,7 +15,7 @@ const first_special = (array) => {
             return array[j];
         }
     }
-    return "There is no special character, bitch.";
+    return "There is no special character.";
 }
 
 var result = first_special([2, 2, 3, 4, 5, 6, 33, 6, 9, 3, 4, 5])
