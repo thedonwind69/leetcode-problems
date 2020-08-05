@@ -44,3 +44,24 @@ function smallestCommons(arr) {
   
 var answer = smallestCommons([1, 5]);
 console.log(answer);
+
+
+function smallestCommons(arr) {
+
+  var largerNum = Math.max(...arr);
+  var smallerNum = Math.min(...arr);
+  var scm = 0;
+  var increment = 1;
+  for (let i = largerNum; i >= smallerNum; i--) {
+    if ((largerNum * increment) % i !== 0 ) {
+      increment += 1;
+      i = largerNum;
+    } else {
+      scm = largerNum * increment;
+    }
+  }
+  return scm;
+}
+
+
+smallestCommons([1,5]);
