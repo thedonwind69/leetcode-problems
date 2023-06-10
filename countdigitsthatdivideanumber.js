@@ -16,3 +16,5 @@ var countDigits = function(num) {
 
   return count;
 };
+
+console.log(countDigits(1223))
