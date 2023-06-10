@@ -18,3 +18,5 @@ var countDigits = function(num) {
 };
 
 console.log(countDigits(1223))
+
+// O of N time cmplexity
