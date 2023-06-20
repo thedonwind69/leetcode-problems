@@ -31,14 +31,12 @@ var maxArea = function(height) {
                     maxWater = times
                 }
             } else if (currentNum1 > currentNum2) {
-                let difference = currentNum1 - currentNum2;
-                let times = (j - i) * (currentNum1 - difference)
+                let times = (j - i) * (currentNum2)
                 if (times > maxWater) {
                     maxWater = times
                 }
-            } else if (currentNum2 - currentNum1) {
-                let difference = currentNum2 - currentNum1;
-                let times = (j - i) * (currentNum2 - difference)
+            } else if (currentNum2 > currentNum1) {
+                let times = (j - i) * (currentNum1)
                 if (times > maxWater) {
                     maxWater = times
                 }
@@ -47,5 +45,8 @@ var maxArea = function(height) {
     }
     return maxWater;
 };
+
+const height = [1,8,6,2,5,4,8,3,7]
+console.log( maxArea(height) );
 
 // passed 55/61 test cases
