@@ -16,3 +16,5 @@ var containsNearbyDuplicate = function(nums, k) {
     return false;
 
 };
+
+// on2 time complexity, worst case
