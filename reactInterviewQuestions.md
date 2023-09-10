@@ -19,3 +19,9 @@ Lastly, you can use CONTEXT, useContext, for GLOBAL state management, that way a
 3. how would you delay an API call until a component has mounted
 
 using class components, you could use componentDidMount(), with functional components, use useEffect with empty dependcy array
+
+4. differences between var let and const
+
+    1. const cant be reassigned
+    2. let can be reassigned
+    3. var is block scope
