@@ -33,6 +33,8 @@ async function fetchAndProcessData() {
     console.error('Error:', error);
   }
 }
+
+console.log(fetchAndProcessData());
 // In this example, fetchData() is an asynchronous function that returns a Promise. The await keyword is used to pause the execution of fetchAndProcessData() until the Promise returned by fetchData() is resolved.
 
 // Note:
