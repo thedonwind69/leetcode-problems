@@ -3,6 +3,7 @@ class TextEditor {
     constructor() {
         this.text = ""
         this.moves = [];
+        this.undos = [];
     }
 
     // dump renders the full text based on the previous actions.
@@ -61,20 +62,43 @@ class TextEditor {
     //   then dump() should return 'foobar'
     undo() {
         if (this.moves.length) {
-            const lastAction = this.moves[this.moves.length-1];
+            const lastAction = this.moves.pop();
+            let newUndo = {
+                undoType: "",
+                previousContent: "",
+                content: "",
+            };
             if (lastAction.action === 'delete') {
                 this.text += lastAction.content;
+                newUndo['undoType'] = "delete";
+                newUndo['content'] = lastAction.content
             } else if (lastAction.action === 'add') {
                 this.text = this.text.slice(0, -lastAction.content.length)
+                newUndo['undoType'] = "add";
+                newUndo['content'] = lastAction.content
             } else if (lastAction.action === 'edit') {
                 this.text = this.text.slice(0, -lastAction.content.length);
                 this.text += lastAction.previousContent;
+                newUndo['undoType'] = "edit";
+                newUndo['previousContent'] =  lastAction.previousContent;
+                newUndo['content'] = lastAction.content
             }
+            this.undos.push(newUndo);
         }
     }
 
     redo() {
-
+        if (this.undos.length) {
+            const lastUndo = this.undos.pop();
+            if (lastUndo.undoType === 'delete') {
+                this.text = this.text.slice(0, -lastUndo.content.length)
+            } else if (lastUndo.undoType === 'add') {
+                this.text += lastUndo.content;
+            } else if (lastUndo.undoType === 'edit') {
+                this.text = this.text.slice(0, -lastUndo.previousContent.length);
+                this.text += lastUndo.content;
+            }
+        }
     }
 }
 
@@ -87,3 +111,5 @@ string.edit('xyz');
 console.log(string.dump()); // Output: 'fooxyz'
 string.undo();
 console.log(string.dump()); // Output: 'foobars'
+string.redo();
+console.log(string.dump()); // Output: 'fooxyz'
