@@ -19,6 +19,7 @@
 // Output: 0
 // Explanation: In this case, no transactions are done and the max profit = 0.
 
+// brute force oN2 solution
 var maxProfit = function(prices) {
     var count = 0;
     for (let i = 0; i<prices.length - 2; i++) {
@@ -35,3 +36,25 @@ var maxProfit = function(prices) {
 
 var prices = [7,1,5,3,6,4];
 console.log(maxProfit(prices))
+
+// oN solution using two pointers sliding window:
+
+var maxProfit = function(prices) {
+    let maxProfit = 0;
+    let left = 0;
+    let right = 1;
+    while (right < prices.length) {
+        let leftPrice = prices[left]
+        let rightPrice = prices[right]
+        if (leftPrice < rightPrice) {
+            let profit = rightPrice - leftPrice;
+            if (profit > maxProfit) {
+                maxProfit = profit
+            }
+        } else {
+            left = right;
+        }
+        right++
+    }
+    return maxProfit
+};
