@@ -27,18 +27,18 @@ const productify = (arr) => {
     let result = [];
     for (let i = 0; i<arr.length; i++) {
         let num = arr[i];
-        result[i] = product * num;
+        result[i] = product;
         product *= num;
     }
     // 1, 2, 6, 24
     let product2 = 1;
-    for (let j = result.length-2; j>=0; j--) {
-        result[j+1] = arr[j+1] * product2;
-        product2 = product2 * arr[j+1]
+    for (let j = result.length-1; j>=0; j--) {
+        result[j] = result[j] * product2;
+        product2 = product2 * arr[j]
     
     }
    
-    console.log(result)
+    return result
 }
 
 // const productify = (arr) => {
