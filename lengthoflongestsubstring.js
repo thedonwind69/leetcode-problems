@@ -20,22 +20,34 @@
 // Output: 1
 // Explanation: The answer is "b", with the length of 1.
 
-var lengthOfLongestSubstring = function(s) {
-    let maxLen = 0;
-    let start = 0;
-    let end = 0;
-    const set = new Set();
-  
-    while (end < s.length) {
-      if (!set.has(s[end])) {
-        set.add(s[end]);
-        maxLen = Math.max(maxLen, set.size);
-        end++;
+const lengthOfLongestSubstring = function(s) {
+    let maxLength = 0;
+    let left = 0;
+    let right = 0;
+    let letterSet = new Set();
+
+    while (right < s.length) {
+      rightLetter = s[right]
+      leftLetter = s[left]
+      if (!letterSet.has(rightLetter)) {
+          letterSet.add(rightLetter)
+          if ((right - left + 1) > maxLength) {
+            maxLength = right - left + 1
+          }
+          right += 1
       } else {
-        set.delete(s[start]);
-        start++;
+        letterSet.delete(leftLetter)
+        left += 1
       }
     }
-  
-    return maxLen;
-  };
+    return maxLength
+};
+
+const test1 = lengthOfLongestSubstring("abcabcbb") 
+// should be "3"
+
+const test2 = lengthOfLongestSubstring("bbbbb")
+// should be "1"
+
+console.log(test1)
+console.log(test2)
